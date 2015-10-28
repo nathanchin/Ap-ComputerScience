@@ -1,0 +1,50 @@
+import java.util.Scanner;
+
+public class VesRes1D 
+{
+	public static int n;
+	public static double x;
+	public static double y;
+	public static void main(String[]args)
+	{
+		Scanner in = new Scanner(System.in);
+
+		int n = -1;
+		while((n % 2 != 0) || (n > 10)||(n<0))
+		{
+			System.out.println("How many domain and range values would you like to enter. N must be an even number between 0-10.");
+			n = in.nextInt();
+		}
+		double[] VeX = new double[n];
+		double[] VeY = new double[n];
+		
+		System.out.print("Enter your domain values.");
+		for (int x = 0; x < n;x++)
+		{
+			VeX[x] = in.nextDouble();
+		}
+		System.out.print("Enter your range values.");
+		for (int y= 0; y < n;y++)
+		{
+			VeY[y] = in.nextDouble();
+		}
+	
+	
+		double totalX = 0;
+		double totalY = 0;
+		
+		for (int q = 0; q < VeX.length;q++)
+		{
+			double x = VeX[q];
+			totalX = totalX + x;
+		}
+		for (int v = 0; v < VeY.length;v++)
+		{
+			double y = VeY[v];
+			totalY = totalY + y;
+		}
+		
+		System.out.println("The resulting vector is: " + "(" + totalX + "," + totalY + ")" );
+        in.close();	
+	}
+}
