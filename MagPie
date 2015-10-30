@@ -102,8 +102,6 @@ public class Magpie
 		return response;
 	}
 }
-import java.util.*;
-
 public class Magpie
 {
 	public static void main(String[] args)
