@@ -21,36 +21,72 @@ public class Magpie {
             common[2] = "What's wrong?";
             common[3] = "Why do you find it interesting?";
             common[4] = "Why do you not like it?";
+            common[5] = "Why do you not like it?";
+            common[6] = "Why do you not like it?";
+            common[7] = "Why do you not like it?";
+            common[8] = "Why do you not like it?";
+            common[9] = "Why do you not like it?";
+            common[10] = "Why do you not like it?";
             
             family[0] = "Do you have any grandparents?";
             family[1] = "Older or younger?";
             family[2] = "Any other siblings";
             family[3] = "Is he around often?";
             family[4] = "What's her opinion on school?";
+            family[5] = "What's her opinion on school?";
+            family[6] = "What's her opinion on school?";
+            family[7] = "What's her opinion on school?";
+            family[8] = "What's her opinion on school?";
+            family[9] = "What's her opinion on school?";
+            family[10] = "What's her opinion on school?";
+            
             
             school[0] = "What's your favorite subjects?";
             school[1] = "Is any subject hard for you?";
             school[3] = "Any interest in going into that field?";
             school[4] = "Does it have a lot of homework?";
             school[5] = "How's the teacher?";
+            school[6] = ""
+            school[7] = ""
+            school[8] = ""
+            school[9] = ""
+            school[10] = ""
             
             activities[0] = "What do you do after school?";
             activities[1] = "What do you do after school?";
             activities[2] = "What do you do after school?";
             activities[3] = "What do you do after school?";
             activities[4] = "What do you do after school?";
+            activities[5] = "What do you do after school?";
+            activities[6] = "What do you do after school?";
+            activities[7] = "What do you do after school?";
+            activities[8] = "What do you do after school?";
+            activities[9] = "What do you do after school?";
+            activities[10] = "What do you do after school?";
             
             friends[0] = "Do you have any best friends?";
             friends[1] = "Do you have any best friends?";
             friends[2] = "Do you have any best friends?";
             friends[3] = "Do you have any best friends?";
             friends[4] = "Do you have any best friends?";
+            friends[5] = "Do you have any best friends?";
+            friends[6] = "Do you have any best friends?";
+            friends[7] = "Do you have any best friends?";
+            friends[8] = "Do you have any best friends?";
+            friends[9] = "Do you have any best friends?";
+            friends[10] = "Do you have any best friends?";
 
             life[0] = "How's life treating you?";
-            life[1] = "How's life treating you?";
+            life[1] = "How much sleep do you get per night?";
             life[2] = "How's life treating you?";
             life[3] = "How's life treating you?";
             life[4] = "How's life treating you?";
+            life[5] = "How's life treating you?";
+            life[6] = "How's life treating you?";
+            life[7] = "How's life treating you?";
+            life[8] = "How's life treating you?";
+            life[9] = "How's life treating you?";
+            life[10] = "How's life treating you?";
             
             if (name.indexOf("no") >= 0)  {
                 System.out.println(common[0]);
