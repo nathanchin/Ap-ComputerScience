@@ -83,7 +83,6 @@ public class StSalu1D
 		String fullLogin = in.nextLine();
 		login[1] = fullLogin.charAt(1);
 		
-		
 		int count = 1;
 		do
 		{
