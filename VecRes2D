@@ -40,6 +40,7 @@ public class VecRes2D
 			double y = VeXY[1][v];
 			totalY = totalY + y;
 		}
+		
 		VeXY[1][length - 1] = totalY;
 		System.out.println("The resulting vector is: " + "(" + VeXY[0][length-1] + "," + VeXY[1][length-1] + ")" );
 	}
