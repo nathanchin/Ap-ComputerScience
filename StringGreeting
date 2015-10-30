@@ -1,0 +1,29 @@
+import java.util.*;
+public class HelloWorld {
+    public static void main(String []args){
+       String name;
+       Scanner in = new Scanner(System.in);
+       System.out.println("Enter your classmate's graduation date and first name, ex 19Sam");
+       name = in.nextLine();
+       in.close();
+       if(name.contains("19")) {
+       name = name.replace("19", "");
+       System.out.println("Hello freshmen " + name);
+       }
+       else if(name.contains("18")) {
+            name = name.replace("18", "");
+           System.out.println("Hello sophmore " + name);
+       }
+       else if(name.contains("17")) {
+            name = name.replace("17", "");
+           System.out.println("Hello junior " + name);
+       }
+       else if(name.contains("16")) {
+            name = name.replace("16", "");
+           System.out.println("Hello senior " + name);
+       }
+       else {
+           System.out.println("This student isn't in high school or it isn't a valid username");
+       }
+    }
+}
