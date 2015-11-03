@@ -1,19 +1,22 @@
 import java.util.*;
 
+//Authors Nathan Chin and Sam Orta
 public class Magpie
 {
+	//Setup for program
 	public static void main(String[] args)
 	{
-		Magpie maggie = new Magpie();
-		System.out.println (maggie.getGreeting());
-		Scanner in = new Scanner (System.in);
-		String statement = in.nextLine();
-    		String[] common = new String[10];
-    		String[] family = new String[10];
-    		String[] school = new String[10];
-    		String[] activities = new String[10];
-    		String[] friends = new String[10];
-    		String[] life = new String[10];
+	//Scanner and initial question
+	Magpie maggie = new Magpie();
+	System.out.println (maggie.getGreeting());
+	Scanner in = new Scanner (System.in);
+	String statement = in.nextLine();
+    	String[] common = new String[10];
+    	String[] family = new String[10];
+    	String[] school = new String[10];
+    	String[] activities = new String[10];
+    	String[] friends = new String[10];
+    	String[] life = new String[10];
             common[0] = "Are you having a bad day?";
             common[1] = "I don't understand";
             common[2] = "What's wrong?";
