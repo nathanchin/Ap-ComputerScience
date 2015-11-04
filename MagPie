@@ -1,8 +1,9 @@
+package workspace;
 import java.util.*;
 
 public class Magpie
 {
-	public static void main(String[] args)
+	public static void main(String[] args) throws java.lang.Exception
 	{
 		Magpie maggie = new Magpie();
 		System.out.println (maggie.getGreeting());
@@ -12,6 +13,7 @@ public class Magpie
 		while (!statement.equals("Bye"))
 		{
 			System.out.println (maggie.getResponse(statement));
+			//System.out.println (maggie.findKeyword("She's my sister", "sister",0));
 			statement = in.nextLine();
 		}
 		in.close();
@@ -35,30 +37,30 @@ public class Magpie
 	public String getResponse(String statement)
 	{
 		String response = "";
-		if (statement.indexOf("no") >= 0)
-		{
-			response = "Why so negative?";
-		}
-		else if (statement.indexOf("java") >= 0)
-		{
-			response = "That's my favorite language!";
-		}
-		else if (statement.trim().length() == 0)
+		if (statement.trim().length() == 0)
 		{
 			response = "Please say something"; 			
 		}
-		else if (statement.indexOf("school") >= 0)
+		else if (findKeyword(statement, "no") >= 0)
+		{
+			response = "Why so negative?";
+		}
+		else if (findKeyword(statement, "java") >= 0)
+		{
+			response = "That's my favorite language!";
+		}
+		else if (findKeyword(statement,"school") >= 0)
 		{
 			response = "Tell me more about school";
 		}
-		else if (statement.indexOf("hello") >= 0)
+		else if (findKeyword(statement,"hello") >= 0)
 		{
 			response = "Hello, tell me about your day?";
 		}
-		else if (statement.indexOf("mother") >= 0
-				|| statement.indexOf("father") >= 0
-				|| statement.indexOf("sister") >= 0
-				|| statement.indexOf("brother") >= 0)
+		else if (findKeyword(statement,"mother") >= 0
+				|| findKeyword(statement,"father") >= 0
+				|| findKeyword(statement,"sister") >= 0
+				|| findKeyword(statement,"brother") >= 0)
 		{
 			response = "Tell me more about your family.";
 		}
@@ -82,15 +84,13 @@ public class Magpie
 	 * @return a non-committal string
 	 */
 	
-	private int findKeyword(String statement, String goal,
-			int startPos)
+	private int findKeyword(String statement, String goal, int startPos)
 	{
 		String phrase = statement.trim();
 		// The only change to incorporate the startPos is in
 		// the line below
 		int psn = phrase.toLowerCase().indexOf(
 				goal.toLowerCase(), startPos);
-
 	    // at this point, if psn found the goal string inside
 	    // the statement, it is psn is 0 or greater 
 
@@ -98,6 +98,8 @@ public class Magpie
 		// word, like "no" inside "knowledge"
 		while (psn >= 0)
 		{
+			System.out.println("psn: " + psn);
+
 			// Find the string of length 1 before and after
 			// the word- we want to grap the the letter before and
 			// after the found string.
@@ -123,168 +125,12 @@ public class Magpie
 					&& ((after.compareTo("a") < 0) || (after
 							.compareTo("z") > 0)))
 			{
+				System.out.println("before: " + before);
+				System.out.println("after: " + after);
 				return psn;
 			}
-
-			// We only get to this part of the code if
-			// the last position didn't work, so let's find
-			// the next, if there is one.
-			psn = phrase.indexOf(goal.toLowerCase(),
-					psn + 1);
-
-		}
-
-		return -1;
-	}
-	
-	private String getRandomResponse()
-	{
-		Random ran = new Random();
-		int answer = ran.nextInt(3);
-		String response = "";
-		if (answer == 0)
-		{
-			response = "You don't say.";
-		}
-		else if (answer == 2)
-		{
-			response = "Mhm";
-		}
-		else if (answer == 1)
-		{
-			response = "That's interesting";
-		}
-		return response;
-	}
-}
-import java.util.*;
-
-public class Magpie
-{
-	public static void main(String[] args)
-	{
-		Magpie maggie = new Magpie();
-		System.out.println (maggie.getGreeting());
-		Scanner in = new Scanner (System.in);
-		String statement = in.nextLine();
-		
-		while (!statement.equals("Bye"))
-		{
-			System.out.println (maggie.getResponse(statement));
-			statement = in.nextLine();
-		}
-		in.close();
-	}
-	/**
-	 * Get a default greeting 	
-	 * @return a greeting
-	 */
-	public String getGreeting()
-	{
-		return "Hello, let's talk.";
-	}
-
-	/**
-	 * Gives a response to a user statement
-	 * 
-	 * @param statement
-	 *            the user statement
-	 * @return a response based on the rules given
-	 */
-	public String getResponse(String statement)
-	{
-		String response = "";
-		if (statement.indexOf("no") >= 0)
-		{
-			response = "Why so negative?";
-		}
-		else if (statement.indexOf("java") >= 0)
-		{
-			response = "That's my favorite language!";
-		}
-		else if (statement.trim().length() == 0)
-		{
-			response = "Please say something"; 			
-		}
-		else if (statement.indexOf("school") >= 0)
-		{
-			response = "Tell me more about school";
-		}
-		else if (statement.indexOf("hello") >= 0)
-		{
-			response = "Hello, tell me about your day?";
-		}
-		else if (statement.indexOf("mother") >= 0
-				|| statement.indexOf("father") >= 0
-				|| statement.indexOf("sister") >= 0
-				|| statement.indexOf("brother") >= 0)
-		{
-			response = "Tell me more about your family.";
-		}
-		else if (statement.indexOf("cat") >= 0
-				|| statement.indexOf("dog") >= 0)
-		{
-			response = "Tell me more about your pets.";
-		}
-		else if (statement.indexOf("Dr. Raj") >= 0)
-		{
-			response = "He sounds like a good teacher";
-		}
-		else
-		{
-			response = getRandomResponse();
-		}
-		return response;
-	}
-		/**
-	 * Pick a default response to use if nothing else fits.
-	 * @return a non-committal string
-	 */
-	
-	private int findKeyword(String statement, String goal,
-			int startPos)
-	{
-		String phrase = statement.trim();
-		// The only change to incorporate the startPos is in
-		// the line below
-		int psn = phrase.toLowerCase().indexOf(
-				goal.toLowerCase(), startPos);
-
-	    // at this point, if psn found the goal string inside
-	    // the statement, it is psn is 0 or greater 
-
-		// Refinement--no to make sure that the goal isn't part of a
-		// word, like "no" inside "knowledge"
-		while (psn >= 0)
-		{
-			// Find the string of length 1 before and after
-			// the word- we want to grap the the letter before and
-			// after the found string.
-			String before = " ", after = " ";
-			if (psn > 0)
-			{
-				before = phrase.substring(psn - 1, psn)
-						.toLowerCase();
-			}
-			if (psn + goal.length() < phrase.length())
-			{
-				after = phrase.substring(
-						psn + goal.length(),
-						psn + goal.length() + 1)
-						.toLowerCase();
-			}
-
-			// If before and after aren't letters, we've
-			// found the word
-			if (((before.compareTo("a") < 0) || (before
-					.compareTo("z") > 0)) // before is not a
-											// letter
-					&& ((after.compareTo("a") < 0) || (after
-							.compareTo("z") > 0)))
-			{
-				return psn;
-			}
-
+			System.out.println("before: " + before);
+			System.out.println("after: " + after);
 			// We only get to this part of the code if
 			// the last position didn't work, so let's find
 			// the next, if there is one.
