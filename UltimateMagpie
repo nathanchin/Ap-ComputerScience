@@ -10,7 +10,7 @@ public class Magpie
 	Magpie maggie = new Magpie();
 	System.out.println (maggie.getGreeting());
 	Scanner in = new Scanner (System.in);
-	String statement = in.nextLine();
+	/*String statement = in.nextLine();
     	String[] common = new String[10];
     	String[] family = new String[10];
     	String[] school = new String[10];
@@ -87,7 +87,7 @@ public class Magpie
             life[7] = "How's life treating you?";
             life[8] = "How's life treating you?";
             life[9] = "How's life treating you?";
-            life[10] = "How's life treating you?";
+            life[10] = "How's life treating you?"; */
 		while (!statement.equals("Bye"))
 		{
 			System.out.println (maggie.getResponse(statement));
