@@ -15,9 +15,9 @@ Notes to anyone who might be on our shared github, this is also some sort of a t
 
 7. All code is available for your own use, just give the author some some credit and feel free to edit it. If you would like to change the code you have two options. 
   
-a. Create a fork of it. A fork is your own copy of the code that leaves the master one untouched. When you think your code is superior just create a pull request (top right corner) and the author of the original code has the option to merge the two codes.
+    a. Create a fork of it. A fork is your own copy of the code that leaves the master one untouched. When you think your code is superior just create a pull request (top right corner) and the author of the original code has the option to merge the two codes.
  
- b. Just update the code, at the very least tell everyone what you changed, preferably get the author's permission first.
+    b. Just update the code, at the very least tell everyone what you changed, preferably get the author's permission first.
 
 8. We have a TODO list of things that need to be done. If you could take it upon yourself to do one and then mark that you're doing it and mark it when it's done
 
