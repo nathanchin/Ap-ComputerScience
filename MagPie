@@ -72,13 +72,65 @@ public class Magpie
 		{
 			response = "He sounds like a good teacher";
 		}
+		else if (findKeyword(statement, "I want", 0) >= 0)
+		{
+			response = transformIWantToStatement(statement);
+		}
 		else
 		{
-			response = getRandomResponse();
+			int psn = findKeyword(statement, "you", 0);
+			//System.out.println("psn: " + psn);
+			if (psn >= 0 )
+			{
+				if (findKeyword(statement, "I" , 0) >= 0)
+				{
+					response = transformYouMeStatement(statement);
+				}
+			}
+			else
+			{
+				
+				response = getRandomResponse();
+			}
 		}
 		return response;
 	}
-		/**
+	
+	private String transformIWantToStatement(String statement)
+	{
+		//  Remove the final period, if there is one
+		statement = statement.trim();
+		String lastChar = statement.substring(statement
+				.length() - 1);
+		if (lastChar.equals("."))
+		{
+			statement = statement.substring(0, statement
+					.length() - 1);
+		}
+		int psn = findKeyword (statement, "I want", 0);
+		String restOfStatement = statement.substring(psn + 7).trim();
+		return "Would you really be happy if you had " + restOfStatement + "?";
+	}
+	
+	private String transformYouMeStatement(String statement)
+	{
+		//  Remove the final period, if there is one
+		statement = statement.trim();
+		String lastChar = statement.substring(statement
+				.length() - 1);
+		if (lastChar.equals("."))
+		{
+			statement = statement.substring(0, statement
+					.length() - 1);
+		}
+		int psnOfYou = findKeyword (statement, "I", 0);
+		int psnOfMe = findKeyword (statement, "you", psnOfYou + 1);
+
+		String restOfStatement = statement.substring(psnOfYou + 1, psnOfMe).trim();
+		return "Why do you " + restOfStatement + " me?";
+	}
+
+	/**
 	 * Pick a default response to use if nothing else fits.
 	 * @return a non-committal string
 	 */
