@@ -3,6 +3,7 @@ Add in whatever you need done. Highly on the list the higher the priority.
 When someone takes on what needs work please mark that you're working on it.
 When you finisht the task, delete it from the list and you're good.
 
-1. Magpie 4 and 5 (5 is created by Sam, might have errors)
+1. Magpie 5 (5 is created by Sam, might have errors)
 2. MagpieQandA  (About halfway done)
-3. Put comments in code 
+3. Put comments in code
+4. Magpie 4 is complete in MagPie(all activities combined)
