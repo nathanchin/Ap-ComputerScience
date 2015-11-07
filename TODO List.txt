@@ -7,3 +7,6 @@ When you finisht the task, delete it from the list and you're good.
 2. MagpieQandA  (About halfway done)
 3. Put comments in code
 4. Magpie 4 is complete in MagPie(all activities combined)
+5. Input picture lab code
+6. Start working on Elevens Lab
+7. Work on "Grading System" for Dr. Raj
