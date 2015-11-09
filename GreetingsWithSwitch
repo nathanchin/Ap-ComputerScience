@@ -1,0 +1,30 @@
+import java.util.*;
+public class HelloWorld {
+    public static void main(String []args){
+       String name;
+       Scanner in = new Scanner(System.in);
+       System.out.println("Enter your classmate's first name");
+       name = in.nextLine();
+       System.out.println("Enter your classmate's graduation date");
+       int grade = in.nextInt();
+       in.close();
+       switch(grade)
+       {
+            case 16: 
+                System.out.println("Hello senior " + name);
+                     break;
+            case 17:
+                System.out.println("Hello junior " + name);
+                     break;
+            case 18:
+                System.out.println("Hello sophmore " + name);
+                     break;
+            case 19:
+                System.out.println("Hello freshmen " + name);
+                     break;
+            default:
+                System.out.println("This student isn't in high school or it isn't a valid username");
+                     break;
+            }
+       }
+    }
