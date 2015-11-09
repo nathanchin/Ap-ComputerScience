@@ -8,25 +8,24 @@ public class HelloWorld {
        in.close();
        char[] charName = name.toCharArray();
        if(name.startsWith("1")) {
-            if(charName[1] == '9') {
-                name = name.replace("19", "");
-                System.out.println("Hello freshmen " + name);
-            }
-            else if(charName[1] == '8') {
-                name = name.replace("18", "");
-                System.out.println("Hello sophmore " + name);
-            }
-            else if(charName[1] == '7') {
-                name = name.replace("17", "");
-                System.out.println("Hello junior " + name);
-            }
-            else if(charName[1] == '6') {
-                name = name.replace("16", "");
-                System.out.println("Hello senior " + name);
-            }
-            else {
-            System.out.println("This student isn't in high school or it isn't a valid username");
-            }
+           switch(charName[1]) {
+                case '9':
+                    name = name.replace("19", "");
+                    System.out.println("Hello freshmen " + name);
+                    break;
+                case '8':
+                    name = name.replace("18", "");
+                    System.out.println("Hello sophmore " + name);
+                    break;
+                case '7':
+                    name = name.replace("17", "");
+                    System.out.println("Hello junior " + name);
+                    break;
+                case '6':
+                    name = name.replace("16", "");
+                    System.out.println("Hello senior " + name);
+                    break;
+           }
        }
        else {
            System.out.println("This student isn't in high school or it isn't a valid username");
