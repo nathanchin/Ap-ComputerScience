@@ -1,0 +1,199 @@
+import java.util.*;
+
+public class Magpie
+{
+	public static void main(String[] args) throws java.lang.Exception
+	{
+		Magpie maggie = new Magpie();
+		System.out.println (maggie.getGreeting());
+		Scanner in = new Scanner (System.in);
+		String statement = in.nextLine();
+		
+		while (!statement.equals("Bye"))
+		{
+			System.out.println (maggie.getResponse(statement));
+			//System.out.println (maggie.findKeyword("She's my sister", "sister",0));
+			statement = in.nextLine();
+		}
+		in.close();
+	}
+
+	public String getGreeting()
+	{
+		return "Hello, let's talk.";
+	}
+
+	public String getResponse(String statement)
+	{
+		String response = "";
+		if (statement.trim().length() == 0)
+		{
+			response = "Please say something"; 			
+		}
+		else if (findKeyword(statement, "no", 0) >= 0)
+		{
+			response = "Why so negative?";
+		}
+		else if (findKeyword(statement, "java", 0) >= 0)
+		{
+			response = "That's my favorite language!";
+		}
+		else if (findKeyword(statement,"school", 0) >= 0)
+		{
+			response = "Tell me more about school";
+		}
+		else if (findKeyword(statement,"hello",0) >= 0)
+		{
+			response = "Hello, tell me about your day?";
+		}
+		else if (findKeyword(statement,"mother",0) >= 0
+				|| findKeyword(statement,"father",0) >= 0
+				|| findKeyword(statement,"sister",0) >= 0
+				|| findKeyword(statement,"brother",0) >= 0)
+		{
+			response = "Tell me more about your family.";
+		}
+		else if (findKeyword(statement,"cat",0) >= 0
+				|| findKeyword(statement, "dog",0) >= 0)
+		{
+			response = "Tell me more about your pets.";
+		}
+		else if (findKeyword(statement, "Dr. Raj",0) >= 0)
+		{
+			response = "He sounds like a good teacher";
+		}
+		else if (findKeyword(statement, "I want", 0) >= 0)
+		{
+			response = transformIWantToStatement(statement);
+		}
+		else
+		{
+			int psn = findKeyword(statement, "you", 0);
+			//System.out.println("psn: " + psn);
+			if (psn >= 0 )
+			{
+				if (findKeyword(statement, "I" , 0) >= 0)
+				{
+					response = transformYouMeStatement(statement);
+				}
+			}
+			else
+			{
+				
+				response = getRandomResponse();
+			}
+		}
+		return response;
+	}
+	
+	private String transformIWantToStatement(String statement)
+	{
+		//  Remove the final period, if there is one
+		statement = statement.trim();
+		String lastChar = statement.substring(statement
+				.length() - 1);
+		if (lastChar.equals("."))
+		{
+			statement = statement.substring(0, statement
+					.length() - 1);
+		}
+		int psn = findKeyword (statement, "I want", 0);
+		String restOfStatement = statement.substring(psn + 7).trim();
+		return "Would you really be happy if you had " + restOfStatement + "?";
+	}
+	
+	private String transformYouMeStatement(String statement)
+	{
+		//  Remove the final period, if there is one
+		statement = statement.trim();
+		String lastChar = statement.substring(statement
+				.length() - 1);
+		if (lastChar.equals("."))
+		{
+			statement = statement.substring(0, statement
+					.length() - 1);
+		}
+		int psnOfYou = findKeyword (statement, "I", 0);
+		int psnOfMe = findKeyword (statement, "you", psnOfYou + 1);
+
+		String restOfStatement = statement.substring(psnOfYou + 1, psnOfMe).trim();
+		return "Why do you " + restOfStatement + " me?";
+	}
+
+	/**
+	 * Pick a default response to use if nothing else fits.
+	 * @return a non-committal string
+	 */
+	
+	private int findKeyword(String statement, String goal, int startPos)
+	{
+		String phrase = statement.trim();
+		// The only change to incorporate the startPos is in
+		// the line below
+		int psn = phrase.toLowerCase().indexOf(
+				goal.toLowerCase(), startPos);
+	    // at this point, if psn found the goal string inside
+	    // the statement, it is psn is 0 or greater 
+
+		// Refinement--no to make sure that the goal isn't part of a
+		// word, like "no" inside "knowledge"
+		while (psn >= 0)
+		{
+			// Find the string of length 1 before and after
+			// the word- we want to grap the the letter before and
+			// after the found string.
+			String before = " ", after = " ";
+			if (psn > 0)
+			{
+				before = phrase.substring(psn - 1, psn)
+						.toLowerCase();
+			}
+			if (psn + goal.length() < phrase.length())
+			{
+				after = phrase.substring(
+						psn + goal.length(),
+						psn + goal.length() + 1)
+						.toLowerCase();
+			}
+
+			// If before and after aren't letters, we've
+			// found the word
+			if (((before.compareTo("a") < 0) || (before
+					.compareTo("z") > 0)) // before is not a
+											// letter
+					&& ((after.compareTo("a") < 0) || (after
+							.compareTo("z") > 0)))
+			{
+				return psn;
+			}
+			// We only get to this part of the code if
+			// the last position didn't work, so let's find
+			// the next, if there is one.
+			psn = phrase.indexOf(goal.toLowerCase(),
+					psn + 1);
+
+		}
+
+		return -1;
+	}
+	
+	private String getRandomResponse()
+	{
+		Random ran = new Random();
+		int answer = ran.nextInt(3);
+		String response = "";
+		if (answer == 0)
+		{
+			response = "You don't say.";
+		}
+		else if (answer == 2)
+		{
+			response = "Mhm";
+		}
+		else if (answer == 1)
+		{
+			response = "That's interesting";
+		}
+		return response;
+	}
+}
