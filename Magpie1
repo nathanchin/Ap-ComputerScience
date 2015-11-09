@@ -1,0 +1,56 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+public class Magpie {
+    public static void main(String[] args) {
+        String response = "";
+        //class family {
+            String name;
+            Scanner in = new Scanner(System.in);
+            System.out.println("How's your family doing");
+            name = in.nextLine();
+            in.close();
+
+            if (name.indexOf("no") >= 0)  {
+                System.out.println(common[0]);
+            }
+            if(name.indexOf("brother") >= 0) {
+               System.out.println(family[1]);
+               System.out.println(family[2]);
+            }         
+            if(name.indexOf("sister") >= 0) {
+                System.out.println(family[1]);
+                System.out.println(family[2]);
+            }
+            if(name.indexOf("mom") >= 0) {
+                System.out.println(family[4]);
+            }
+            if(name.indexOf("dad") >= 0){
+                System.out.println(family[3]);
+            }
+            if(name.indexOf("school") >= 0) {
+                System.out.println(school[0]);
+            }
+            if(name.indexOf("dad") >= 0) {
+                System.out.println(family[3]);
+            }
+            if(name.indexOf("dad") >= 0) {
+                System.out.println(family[3]);
+            }
+            if(name.indexOf("dad") >= 0) {
+                System.out.println(family[3]);
+            }
+            
+            //String response = name.contains
+            /*switch(name.contains) {
+                case "brother": System.out.println(famly[1]);
+                break;
+                case "sister": System.out.println(famly[2]);
+                break;
+                case "dad": System.out.println(famly[3]);
+                break;
+                case "mom": System.out.println(famly[4]);
+                break;
+            } */
+        }
+     }
