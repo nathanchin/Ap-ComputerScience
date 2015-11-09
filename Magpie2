@@ -1,0 +1,94 @@
+import java.util.*;
+
+//Authors Nathan Chin and Sam Orta
+public class Magpie
+{
+    //Setup for program
+    public static void main(String[] args)
+    {
+   
+    //Scanner and initial question
+    Magpie maggie = new Magpie();
+    System.out.println (maggie.getGreeting());
+    Scanner in = new Scanner (System.in);
+    String statement = in.nextLine();
+        while (!statement.equals("Bye"))
+        {
+            System.out.println (maggie.getResponse(statement));
+            statement = in.nextLine();
+        }
+        in.close();
+    }
+
+    public String getGreeting()
+    {
+        return "Hello, let's talk.";
+    }
+
+    public String getResponse(String statement)
+    {
+        String response = "";
+        if (statement.indexOf("no") >= 0)
+        {
+            response = "Why so negative?";
+        }
+        else if (statement.indexOf("java") >= 0)
+        {
+            response = "That's my favorite language!";
+        }
+        else if (statement.trim().length() == 0)
+        {
+            response = "Please say something";             
+        }
+        else if (statement.indexOf("school") >= 0)
+        {
+            response = "Tell me more about school";
+        }
+        else if (statement.indexOf("hello") >= 0)
+        {
+            response = "Hello, tell me about your day?";
+        }
+        else if (statement.indexOf("mother") >= 0
+                || statement.indexOf("father") >= 0
+                || statement.indexOf("sister") >= 0
+                || statement.indexOf("brother") >= 0)
+        {
+            response = "Tell me more about your family.";
+        }
+        else if (statement.indexOf("cat") >= 0
+                || statement.indexOf("dog") >= 0)
+        {
+            response = "Tell me more about your pets.";
+        }
+        else if (statement.indexOf("Dr. Raj") >= 0)
+        {
+            response = "He sounds like a good teacher";
+        }
+        else
+        {
+            response = getRandomResponse();
+        }
+        return response;
+    }
+
+    
+    private String getRandomResponse()
+    {
+        Random ran = new Random();
+        int answer = ran.nextInt(3);
+        String response = "";
+        if (answer == 0)
+        {
+            response = "You don't say.";
+        }
+        else if (answer == 2)
+        {
+            response = "Mhm";
+        }
+        else if (answer == 1)
+        {
+            response = "That's interesting";
+        }
+        return response;
+    }
+}
