@@ -3,7 +3,7 @@ Notes to anyone who might be on our shared github, this is also some sort of a t
 
 1. You are currently in what is known as a resporitory. It is a folder that houses all the code we have written
 
-2. Our resporitory is broken up in branches which sort them into categories, current branches include setup, master (contains everything), strings and magpie. To change branches go to the create/change branch, it's in the top rightish left corner.
+2. Our resporitory is broken up in branches which sort them into categories, current branches include setup, master (contains everything), strings and magpie. To change branches go to the create/change branch, it's in the top leftish left corner.
 
 3. To access a file just click on it. The gray text to the right of it is a description of whatever the last editor did on the file. Please update it if you edit code.
 
@@ -19,7 +19,11 @@ Notes to anyone who might be on our shared github, this is also some sort of a t
  
     b. Just update the code, at the very least tell everyone what you changed, preferably get the author's permission first.
 
-8. We have a TODO list of things that need to be done. If you could take it upon yourself to do one and then mark that you're doing it and mark it when it's done
+8. When you finish working on your program, before you hit commit please write a short summary (like 20 characters short). Helps keep things known betweeen everyone.
 
-9. That should be about it. Enjoy your day and welcome to our coding group!
+9. Please put comments in your code, especially in parts that no one but the person who wrote it would understand easily.
+
+10. We have a TODO list of things that need to be done. If you could take it upon yourself to do one and then mark that you're doing it and mark it when it's done
+
+That should be about it. Enjoy your day and welcome to our coding group!
 -Sam Orta
