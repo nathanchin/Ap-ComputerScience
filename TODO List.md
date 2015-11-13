@@ -9,3 +9,5 @@ When you finisht the task, delete it from the list and you're good.
 5. Input picture lab code
 6. Start working on Elevens Lab
 7. Work on "Grading System" for Dr. Raj
+8. Get your sites done
+9. Working on StringGreeting (Sam)
