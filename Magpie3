@@ -1,5 +1,5 @@
 import java.util.*;
-
+//Author Nathan Chin and Sam Orta
 public class Magpie
 {
 	public static void main(String[] args) throws java.lang.Exception
