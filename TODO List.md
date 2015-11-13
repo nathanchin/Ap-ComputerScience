@@ -2,7 +2,7 @@ Add in whatever you need done. Highly on the list the higher the priority.
 
 When someone takes on what needs work please mark that you're working on it.
 When you finisht the task, delete it from the list and you're good.
-
+1. StringGreeting uppercase on first letter of name
 2. MagpieQandA  (About three quarters done)
 3. Put comments in code
 4. Magpie 4 is complete in MagPie(all activities combined)
