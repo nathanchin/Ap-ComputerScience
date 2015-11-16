@@ -3,39 +3,46 @@ public class HelloWorld {
     public static void main(String []args){
        String name;
        Scanner in = new Scanner(System.in);
-       System.out.println("Enter your classmate's graduation date and first name, ex 19sam");
+       System.out.println("Enter your classmate's district username, ex 19samuelor");
        name = in.nextLine();
        in.close();
        if(name.contains(" ")) {
            System.out.println("This student isn't in high school or it isn't a valid username");
        }
        else {
-            char[] charName = name.toCharArray();
+             char[] charName = name.toCharArray();
              String letter = Character.toString(charName[2]);
              letter = letter.toUpperCase();   
              if(name.startsWith("1")) {
                     switch(charName[1]) {
                         case '9':
                             name = name.replace("19", "");
+                            name = name.substring(0,1).toUpperCase() + name.substring(1);
+                            name = name.substring(0, name.length()-2);
                             System.out.println("Hello freshmen " + name);
                             break;
                          case '8':
                             name = name.replace("18", "");
+                            name = name.substring(0,1).toUpperCase() + name.substring(1);
+                            name = name.substring(0, name.length()-2);
                             System.out.println("Hello sophmore " + name);
                             break;
                         case '7':
                             name = name.replace("17", "");
+                            name = name.substring(0,1).toUpperCase() + name.substring(1);
+                            name = name.substring(0, name.length()-2);
                             System.out.println("Hello junior " + name);
                             break;
                         case '6':
                             name = name.replace("16", "");
+                            name = name.substring(0,1).toUpperCase() + name.substring(1);
+                            name = name.substring(0, name.length()-2);
                             System.out.println("Hello senior " + name);
                             break;
+                        default:
+                            System.out.println("This student isn't in high school or it isn't a valid username");
                     }
                 }
-       else {
-           System.out.println("This student isn't in high school or it isn't a valid username");
-       }
     }
     }  
 }
