@@ -56,13 +56,13 @@ public class Magpie
 				|| findKeyword(statement,"brother",0) >= 0)
 		{
 		  //Random response if family is mentioned
-		  String getFamilyResponse()
-	      {
+		 String getFamilyResponse()
+	      	{
 		    Random f = new Random();
 		    return randomFamily [r.nextInt(randomFamily.length)];
-	      } 
-	      String[] randomFamily = {
-	      "Do you have any grandparents?",
+	      	} 
+	      	String[] randomFamily = {
+	      		"Do you have any grandparents?",
 			  "Older or younger siblings?",
 			  "Do you really think so?",
 			  "Any other siblings",
