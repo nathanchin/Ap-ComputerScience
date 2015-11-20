@@ -1,0 +1,29 @@
+
+public class Card {
+	private String rank;
+	private String suit;
+	private int points;
+	
+	public Card(String rank, String suit, int point) 
+	{
+		
+	}
+	public String rank() {
+		return "hi";
+	}
+	public String suit() {
+		return "hi";
+	}
+	public int points() {
+		return 8;
+	}
+	public boolean CardEquality(Card card1, Card card2)
+	{
+		return true;
+	}
+	public String toString()
+	{
+		return rank + " of " + suit + " " + "(point value) = " + points; 
+	}
+}
+
